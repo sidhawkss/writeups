@@ -173,7 +173,7 @@ Reading the code we look that index.go executes /bin/bash and
 [deploy.sh](http://deploy.sh) localized in wasm-functions and it read
 main.wasm
 
-### ARTICLES: {#adc00fa7-3db4-49e3-9a7c-bc6445d791be}
+### ARTICLES: 
 
 [https://www.reddit.com/r/golang/comments/jaqypa/machine\_a\_zero\_dependency\_library\_for\_managed/](https://www.reddit.com/r/golang/comments/jaqypa/machine_a_zero_dependency_library_for_managed/)
 
