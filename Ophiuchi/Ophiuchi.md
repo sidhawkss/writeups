@@ -258,7 +258,7 @@ Root access :
 
 [![](Ophiuchi/Untitled%2026.png)](Ophiuchi/Untitled%2026.png)
 
-### Sources: {#817b1e37-940b-488e-abc1-06b030734a56}
+### Sources:
 
 [https://github.com/artsploit/yaml-payload](https://github.com/artsploit/yaml-payload)
 
