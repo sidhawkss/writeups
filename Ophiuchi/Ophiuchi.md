@@ -1,6 +1,6 @@
 🎯
 
-Ophiuchi {.page-title}
+Ophiuchi
 ========
 
 Starting with nmap scan:
