@@ -2,7 +2,7 @@
 
 Nmap Scan
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled.png)
+![Tenet/Untitled.png](Tenet/Untitled.png)
 
 Wordpress page with search input.
 
