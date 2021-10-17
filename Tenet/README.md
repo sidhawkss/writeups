@@ -2,35 +2,35 @@
 
 Nmap Scan
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled.png)
+![Tenet/Untitled.png](Tenet/Untitled.png)
 
 Wordpress page with search input.
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%201.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%201.png)
+![Tenet/Untitled%201.png](Tenet/Untitled%201.png)
 
 Gobuster scan to discover new directories. 
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%202.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%202.png)
+![Tenet/Untitled%202.png](Tenet/Untitled%202.png)
 
 Wp-include files
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%203.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%203.png)
+![Tenet/Untitled%203.png](Tenet/Untitled%203.png)
 
 Probably has a interesting file called sator.php 
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%204.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%204.png)
+![Tenet/Untitled%204.png](Tenet/Untitled%204.png)
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%205.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%205.png)
+![Tenet/Untitled%205.png](Tenet/Untitled%205.png)
 
 Trying find the backup file, i found with extension .bak
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%206.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%206.png)
+![Tenet/Untitled%206.png](Tenet/Untitled%206.png)
 
 Analyzing the backup, it serializes arepo parameter.
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%207.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%207.png)
+![Tenet/Untitled%207.png](Tenet/Untitled%207.png)
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%208.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%208.png)
+![Tenet/Untitled%208.png](Tenet/Untitled%208.png)
 
 Object serialization is a concept that expands in almost all programming languages, its main objective is to transform an object into a binary form or even into a text format (such as XML, for example) in order to transmit it via the network. or store your content without data loss.
 
@@ -48,29 +48,29 @@ Sources:
 
 Serialized → URL → base64
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%209.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%209.png)
+![Tenet/Untitled%209.png](Tenet/Untitled%209.png)
 
 If we read file with binary we look serialized code.
 
 Making it
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2010.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2010.png)
+![Tenet/Untitled%2010.png](Tenet/Untitled%2010.png)
 
 I realized that the site is waiting
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2011.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2011.png)
+![Tenet/Untitled%2011.png](Tenet/Untitled%2011.png)
 
 I tried make a similar php file serialize it and test in my [localhost](http://localhost) to get exploit.
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2012.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2012.png)
+![Tenet/Untitled%2012.png](Tenet/Untitled%2012.png)
 
 And sator returns me one more line
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2013.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2013.png)
+![Tenet/Untitled%2013.png](Tenet/Untitled%2013.png)
 
 And i don't give a reverse shell but i try make a php file with command permissions
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2014.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2014.png)
+![Tenet/Untitled%2014.png](Tenet/Untitled%2014.png)
 
 and success 
 
@@ -88,27 +88,27 @@ $obj = new DatabaseExport;
 echo htmlspecialchars(serialize($obj));
 ```
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2015.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2015.png)
+![Tenet/Untitled%2015.png](Tenet/Untitled%2015.png)
 
 Python reverse shell
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2016.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2016.png)
+![Tenet/Untitled%2016.png](Tenet/Untitled%2016.png)
 
 We got the shell, can stop apache2 server
 
 Let's go now get user flag, sudoers  command:
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2017.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2017.png)
+![Tenet/Untitled%2017.png](Tenet/Untitled%2017.png)
 
 With id_rsa we can connect in ssh using the key, but is necessary have the password. 
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2018.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2018.png)
+![Tenet/Untitled%2018.png](Tenet/Untitled%2018.png)
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2019.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2019.png)
+![Tenet/Untitled%2019.png](Tenet/Untitled%2019.png)
 
 Is the same password of user account. 
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2020.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2020.png)
+![Tenet/Untitled%2020.png](Tenet/Untitled%2020.png)
 
 [https://www.youtube.com/watch?v=lKfVBxSUPNg](https://www.youtube.com/watch?v=lKfVBxSUPNg)
 
@@ -130,7 +130,7 @@ echo "ID_RSA.PUB HERE" | tee /tmp/ssh-* //tee write in file
 done
 ```
 
-![Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2021.png](Tenet%204291f405b73f49e89298392fbf851a39/Untitled%2021.png)
+![Tenet/Untitled%2021.png](Tenet/Untitled%2021.png)
 
 ```jsx
 /wp-admin            
