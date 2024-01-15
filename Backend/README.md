@@ -1,9 +1,4 @@
 # Backend
-
-![Backend.png](Backend/Backend.png)
-
-**April 15, 2022**
-
 Nmap scan to discover open ports and service versions.
 
 ![Untitled](Backend/Untitled.png)
